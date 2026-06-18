@@ -830,7 +830,7 @@
   <div class="dress-main">Formal · Colores Pasteles</div>
 
   <div class="dress-colors">
-    <div class="color-swatch" style="background:#c8f8e8;"></div>
+    <div class="color-swatch" style="background:#f8c8d4;"></div>
     <div class="color-swatch" style="background:#c8daf8;"></div>
     <div class="color-swatch" style="background:#c8f8d4;"></div>
     <div class="color-swatch" style="background:#f8ecc8;"></div>
@@ -907,6 +907,20 @@
 <!-- ══ ADMIN TRIGGER ══ -->
 <button class="admin-trigger" onclick="openLogin()" title="Panel">👁</button>
 
+<!-- ══ MUSIC BTN ══ -->
+<button id="music-btn" onclick="toggleMusic()" title="Música" style="
+  position:fixed; bottom:24px; left:24px; z-index:100;
+  width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  color:rgba(200,230,255,0.5);
+  font-size:20px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(10px);
+  transition:all 0.3s;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+">♩</button>
+
 <!-- ══ LOGIN ══ -->
 <div class="login-overlay" id="login-overlay">
   <div class="login-box glass-card">
@@ -956,6 +970,33 @@
 </div>
 
 <script>
+  /* ── MUSIC ── */
+  const audio = new Audio('https://drive.google.com/uc?export=download&id=1uoJL43k2c0m9SOBykugiCS1W2p-OCCfI');
+  audio.loop = true;
+  audio.volume = 0.5;
+  let musicStarted = false;
+
+  function startMusic() {
+    if (musicStarted) return;
+    musicStarted = true;
+    audio.play().catch(() => {});
+    const btn = document.getElementById('music-btn');
+    if (btn) btn.textContent = '♪';
+  }
+
+  document.addEventListener('click', startMusic, { once: true });
+  document.addEventListener('touchstart', startMusic, { once: true });
+
+  function toggleMusic() {
+    if (audio.paused) {
+      audio.play();
+      document.getElementById('music-btn').textContent = '♪';
+    } else {
+      audio.pause();
+      document.getElementById('music-btn').textContent = '♩';
+    }
+  }
+
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz3uc1vRliVJbtFSTq9H0uwcSHi-Ep8CVnd3V4qygrP-snuYnvFU-DaQZJ4-07UUIT5/exec';
   const PANEL_PASS = 'khrismelxv2026';
   let selectedAttend = null;
