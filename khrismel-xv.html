@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años · Khrismel M. González</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose:       #c97fa8;
+    --rose-light: #e8b4d0;
+    --rose-pale:  #f7e8f1;
+    --navy:       #1a1a2e;
+    --midnight:   #0d0d1a;
+    --gold:       #d4af6a;
+    --gold-light: #f0d898;
+    --cream:      #fdf6f0;
+    --lavender:   #b8a9d4;
+    --white:      #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--midnight);
+    color: var(--cream);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── STARS BACKGROUND ── */
+  .stars-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(184,169,212,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,127,168,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 90%, rgba(212,175,106,0.05) 0%, transparent 50%),
+      var(--midnight);
+  }
+  .stars-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 8%, rgba(255,255,255,0.9) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 55%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 70%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 95%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 85%, rgba(212,175,106,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 70%, rgba(184,169,212,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 35%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 30% 20%, rgba(240,216,152,0.5) 0%, transparent 100%);
+  }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 60px 24px 40px;
+    position: relative;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .moon-ring {
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%,
+      rgba(255,255,255,0.15) 0%,
+      rgba(184,169,212,0.08) 40%,
+      rgba(201,127,168,0.05) 70%,
+      transparent 100%);
+    border: 1px solid rgba(212,175,106,0.25);
+    box-shadow:
+      0 0 40px rgba(212,175,106,0.15),
+      0 0 80px rgba(184,169,212,0.1),
+      inset 0 0 40px rgba(201,127,168,0.05);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .moon-ring::before {
+    content: '';
+    position: absolute; inset: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,106,0.12);
+  }
+  .moon-ring::after {
+    content: '';
+    position: absolute; inset: -24px;
+    border-radius: 50%;
+    border: 1px dashed rgba(184,169,212,0.1);
+    animation: ring-spin 30s linear infinite;
+  }
+  @keyframes ring-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .hero-photo {
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.9) contrast(1.05) saturate(1.1);
+    border: 2px solid rgba(212,175,106,0.3);
+  }
+
+  .rose-crown {
+    position: absolute; top: -20px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(201,127,168,0.6));
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.85;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 12vw, 80px);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    text-shadow: 0 0 60px rgba(201,127,168,0.3);
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--rose-light);
+    display: block;
+    font-size: 0.7em;
+  }
+
+  .hero-xv {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(60px, 18vw, 110px);
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--rose-light));
+    -webkit-background-clip: text; background-clip: text;
+    line-height: 1;
+    margin-bottom: 24px;
+    text-shadow: none;
+    filter: drop-shadow(0 0 20px rgba(212,175,106,0.3));
+  }
+
+  .hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.7;
+    color: rgba(253,246,240,0.75);
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 0 auto 40px;
+    max-width: 300px;
+  }
+  .divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(212,175,106,0.4), transparent); }
+  .divider-icon { color: var(--gold); font-size: 16px; opacity: 0.7; }
+
+  /* ── DETAILS SECTION ── */
+  .details {
+    padding: 80px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 48px;
+    opacity: 0.8;
+  }
+
+  .date-display {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .date-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(80px, 22vw, 140px);
+    font-weight: 300;
+    line-height: 0.85;
+    color: transparent;
+    background: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.3) 100%);
+    -webkit-background-clip: text; background-clip: text;
+  }
+  .date-month {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(18px, 5vw, 28px);
+    color: var(--rose-light);
+    letter-spacing: 0.2em;
+  }
+  .date-year {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; letter-spacing: 0.3em;
+    color: rgba(253,246,240,0.4);
+    margin-top: 4px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 48px;
+    border: 1px solid rgba(212,175,106,0.12);
+  }
+  .info-card {
+    padding: 32px 24px;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,106,0.06);
+    transition: background 0.3s;
+  }
+  .info-card:hover { background: rgba(201,127,168,0.04); }
+  .info-icon { font-size: 22px; margin-bottom: 12px; display: block; }
+  .info-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 0.35em;
+    color: var(--gold); opacity: 0.7;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+
+  /* ── DRESS CODE ── */
+  .dress-section {
+    padding: 80px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .dress-badge {
+    display: inline-block;
+    border: 1px solid rgba(212,175,106,0.25);
+    padding: 6px 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .dress-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-style: italic;
+    color: var(--rose-light);
+    margin-bottom: 24px;
+  }
+  .dress-colors {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .color-swatch {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    cursor: default;
+  }
+  .color-swatch:hover { transform: scale(1.15); }
+
+  .dress-rules {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .dress-rules li {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; letter-spacing: 0.08em;
+    color: rgba(253,246,240,0.65);
+    display: flex; align-items: center; gap: 10px;
+    justify-content: center;
+  }
+  .dress-rules .icon-no { color: #e88a9a; font-size: 11px; }
+  .dress-rules .icon-yes { color: var(--gold); font-size: 11px; }
+
+  /* ── PARENTS ── */
+  .parents-section {
+    padding: 60px 24px 80px;
+    text-align: center;
+  }
+  .parents-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 16px;
+    color: rgba(253,246,240,0.5);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .parents-names {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(14px, 3.5vw, 18px);
+    color: var(--cream);
+    letter-spacing: 0.15em;
+  }
+  .parents-amp {
+    color: var(--gold); opacity: 0.6; margin: 0 16px;
+  }
+
+  /* ── CONFIRMATION ── */
+  .confirm-section {
+    padding: 80px 24px 100px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .confirm-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 7vw, 42px);
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .confirm-sub {
+    text-align: center;
+    font-size: 13px;
+    color: rgba(253,246,240,0.45);
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group { margin-bottom: 24px; }
+  .form-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 0.35em;
+    color: var(--gold); opacity: 0.8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .form-input, .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,175,106,0.2);
+    color: var(--cream);
+    padding: 14px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus {
+    border-color: rgba(201,127,168,0.5);
+    background: rgba(201,127,168,0.04);
+  }
+  .form-input::placeholder { color: rgba(253,246,240,0.25); }
+  .form-select option { background: var(--midnight); color: var(--cream); }
+
+  .attend-toggle {
+    display: flex; gap: 2px; margin-bottom: 24px;
+  }
+  .attend-btn {
+    flex: 1; padding: 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,175,106,0.2);
+    color: rgba(253,246,240,0.5);
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 0.25em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .attend-btn.active-yes {
+    background: rgba(212,175,106,0.1);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+  .attend-btn.active-no {
+    background: rgba(232,138,154,0.08);
+    border-color: rgba(232,138,154,0.4);
+    color: #e88a9a;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(201,127,168,0.15), rgba(212,175,106,0.15));
+    border: 1px solid rgba(212,175,106,0.35);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+  .submit-btn:hover {
+    background: linear-gradient(135deg, rgba(201,127,168,0.25), rgba(212,175,106,0.25));
+    border-color: var(--gold);
+  }
+  .submit-btn:disabled {
+    opacity: 0.5; cursor: not-allowed;
+  }
+
+  .form-msg {
+    text-align: center; margin-top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 16px;
+    min-height: 24px;
+    color: var(--rose-light);
+  }
+  .form-msg.error { color: #e88a9a; }
+
+  /* ── FLOATING PETALS ── */
+  .petal {
+    position: fixed; pointer-events: none; z-index: 0;
+    font-size: 12px; opacity: 0;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.4; }
+    90%  { opacity: 0.2; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ── QR SECTION ── */
+  .qr-section {
+    padding: 40px 24px 60px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .qr-note {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; letter-spacing: 0.12em;
+    color: rgba(253,246,240,0.35);
+    margin-top: 16px;
+  }
+
+  /* ── PANEL / ADMIN ── */
+  .panel-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(13,13,26,0.97);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .panel-overlay.open { display: flex; }
+
+  .panel-header {
+    padding: 40px 32px 24px;
+    border-bottom: 1px solid rgba(212,175,106,0.12);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .panel-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 0.4em;
+    color: var(--gold); opacity: 0.8;
+  }
+  .panel-close {
+    background: none; border: 1px solid rgba(212,175,106,0.2);
+    color: rgba(253,246,240,0.5); cursor: pointer;
+    padding: 8px 16px; font-size: 12px;
+    letter-spacing: 0.15em; font-family: 'Lato', sans-serif;
+    transition: all 0.2s;
+  }
+  .panel-close:hover { border-color: var(--gold); color: var(--gold); }
+
+  .panel-body { padding: 40px 32px; flex: 1; }
+
+  .panel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .panel-subtitle {
+    font-size: 13px; color: rgba(253,246,240,0.4);
+    margin-bottom: 40px; letter-spacing: 0.05em;
+  }
+
+  .stats-row {
+    display: flex; gap: 2px; margin-bottom: 40px;
+  }
+  .stat-box {
+    flex: 1; padding: 24px 16px; text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,106,0.08);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 300; line-height: 1;
+    color: var(--gold-light);
+  }
+  .stat-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 0.3em;
+    color: rgba(253,246,240,0.4);
+    margin-top: 6px;
+  }
+
+  .panel-table {
+    width: 100%; border-collapse: collapse;
+  }
+  .panel-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 0.3em;
+    color: var(--gold); opacity: 0.7;
+    text-align: left; padding: 12px 16px;
+    border-bottom: 1px solid rgba(212,175,106,0.12);
+  }
+  .panel-table td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: rgba(253,246,240,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+  }
+  .panel-table tr:hover td { background: rgba(201,127,168,0.03); }
+
+  .badge {
+    display: inline-block; padding: 3px 10px;
+    font-size: 10px; letter-spacing: 0.1em;
+    border-radius: 0;
+  }
+  .badge-yes {
+    background: rgba(212,175,106,0.1);
+    border: 1px solid rgba(212,175,106,0.3);
+    color: var(--gold-light);
+  }
+  .badge-no {
+    background: rgba(232,138,154,0.08);
+    border: 1px solid rgba(232,138,154,0.3);
+    color: #e88a9a;
+  }
+
+  .panel-refresh {
+    background: rgba(212,175,106,0.08);
+    border: 1px solid rgba(212,175,106,0.2);
+    color: var(--gold);
+    padding: 10px 24px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 0.3em;
+    cursor: pointer; margin-bottom: 24px;
+    transition: all 0.2s;
+  }
+  .panel-refresh:hover { background: rgba(212,175,106,0.15); }
+
+  /* ── LOGIN MODAL ── */
+  .login-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(13,13,26,0.98);
+    backdrop-filter: blur(12px);
+    align-items: center; justify-content: center;
+  }
+  .login-overlay.open { display: flex; }
+
+  .login-box {
+    width: 100%; max-width: 380px;
+    padding: 56px 40px;
+    border: 1px solid rgba(212,175,106,0.15);
+    text-align: center;
+    background: rgba(255,255,255,0.01);
+  }
+  .login-crown { font-size: 32px; margin-bottom: 24px; display: block; }
+  .login-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px; letter-spacing: 0.35em;
+    color: var(--gold); opacity: 0.8;
+    margin-bottom: 32px;
+  }
+  .login-input {
+    width: 100%; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,175,106,0.2);
+    color: var(--cream); padding: 14px 18px;
+    font-family: 'Lato', sans-serif; font-size: 14px;
+    outline: none; margin-bottom: 16px;
+    letter-spacing: 0.1em;
+    transition: border-color 0.3s;
+    text-align: center;
+  }
+  .login-input:focus { border-color: rgba(201,127,168,0.5); }
+  .login-input::placeholder { color: rgba(253,246,240,0.2); letter-spacing: 0.05em; }
+  .login-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, rgba(201,127,168,0.15), rgba(212,175,106,0.15));
+    border: 1px solid rgba(212,175,106,0.35);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.4em;
+    cursor: pointer; transition: all 0.3s; text-transform: uppercase;
+  }
+  .login-btn:hover { background: linear-gradient(135deg, rgba(201,127,168,0.25), rgba(212,175,106,0.25)); }
+  .login-cancel {
+    background: none; border: none; color: rgba(253,246,240,0.3);
+    font-size: 12px; cursor: pointer; margin-top: 20px;
+    letter-spacing: 0.1em; transition: color 0.2s;
+  }
+  .login-cancel:hover { color: rgba(253,246,240,0.6); }
+  .login-err { color: #e88a9a; font-size: 12px; margin-top: 12px; min-height: 18px; }
+
+  /* ── ADMIN TRIGGER ── */
+  .admin-trigger {
+    position: fixed; bottom: 24px; right: 24px; z-index: 100;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(212,175,106,0.08);
+    border: 1px solid rgba(212,175,106,0.15);
+    color: rgba(212,175,106,0.4);
+    font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+  }
+  .admin-trigger:hover {
+    background: rgba(212,175,106,0.15);
+    border-color: rgba(212,175,106,0.4);
+    color: var(--gold);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-direction: column; }
+    .panel-body { padding: 24px 16px; }
+    .panel-header { padding: 24px 16px 20px; }
+    .login-box { padding: 48px 28px; }
+    .panel-table td, .panel-table th { padding: 12px 10px; }
+  }
+
+  /* ── ENTRANCE ANIMATION ── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    animation: fadeUp 1s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: 0.3s; }
+  .delay-2 { animation-delay: 0.6s; }
+  .delay-3 { animation-delay: 0.9s; }
+  .delay-4 { animation-delay: 1.2s; }
+  .delay-5 { animation-delay: 1.5s; }
+
+  /* empty panel state */
+  .panel-empty {
+    text-align: center; padding: 60px 20px;
+    color: rgba(253,246,240,0.25);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="stars-bg"></div>
+
+<!-- Floating petals -->
+<div id="petals"></div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-photo-wrap fade-up">
+    <div class="moon-ring">
+      <img class="hero-photo"
+        src="https://i.ibb.co/C5C91HXB/XV-KHRISMEL.jpg"
+        alt="Khrismel">
+    </div>
+    <span class="rose-crown">👑</span>
+  </div>
+
+  <p class="hero-eyebrow fade-up delay-1">Una noche de cuento · 2026</p>
+
+  <h1 class="hero-name fade-up delay-2">
+    Khrismel<br>
+    <em>M. González</em>
+  </h1>
+
+  <div class="hero-xv fade-up delay-3">XV</div>
+
+  <p class="hero-quote fade-up delay-4">
+    Entre sueños, luces y estrellas, llega una noche<br>
+    que guardaré por siempre en mi corazón.
+  </p>
+
+  <div class="divider fade-up delay-5">
+    <span class="divider-line"></span>
+    <span class="divider-icon">✦</span>
+    <span class="divider-line"></span>
+  </div>
+</section>
+
+<!-- ══ DATE & DETAILS ══ -->
+<section class="details">
+  <p class="section-title">La celebración</p>
+
+  <div class="date-display">
+    <div class="date-day">04</div>
+    <div class="date-month">Julio</div>
+    <div class="date-year">2 0 2 6</div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="info-icon">🌙</span>
+      <div class="info-label">Hora</div>
+      <div class="info-value">7:00 pm</div>
+    </div>
+    <div class="info-card">
+      <span class="info-icon">✦</span>
+      <div class="info-label">Lugar</div>
+      <div class="info-value">Villa Ventura</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DRESS CODE ══ -->
+<section class="dress-section">
+  <div class="section-title">Dress code</div>
+  <div class="dress-badge">Código de vestimenta</div>
+  <div class="dress-main">Formal · Colores Pasteles</div>
+
+  <div class="dress-colors">
+    <div class="color-swatch" style="background:#f8c8d4;" title="Rosa pálido"></div>
+    <div class="color-swatch" style="background:#c8daf8;" title="Azul pastel"></div>
+    <div class="color-swatch" style="background:#c8f8d4;" title="Menta"></div>
+    <div class="color-swatch" style="background:#f8ecc8;" title="Champagne"></div>
+    <div class="color-swatch" style="background:#dcc8f8;" title="Lavanda"></div>
+    <div class="color-swatch" style="background:#f8f8c8;" title="Amarillo suave"></div>
+  </div>
+
+  <ul class="dress-rules">
+    <li><span class="icon-no">✕</span> No asistir con ningún tipo de color rosa</li>
+  </ul>
+</section>
+
+<!-- ══ PARENTS ══ -->
+<section class="parents-section">
+  <div class="divider" style="margin-bottom:32px;">
+    <span class="divider-line"></span>
+    <span class="divider-icon">❧</span>
+    <span class="divider-line"></span>
+  </div>
+  <p class="parents-title">Con emoción y gratitud, la presentan sus padres</p>
+  <p class="parents-names">
+    Aranza González
+    <span class="parents-amp">&</span>
+    Cristian Matos
+  </p>
+  <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; color:rgba(253,246,240,0.4); margin-top:20px; letter-spacing:0.05em;">
+    Les damos la bienvenida a esta noche tan especial.
+  </p>
+</section>
+
+<!-- ══ CONFIRMACIÓN ══ -->
+<section class="confirm-section">
+  <div class="divider" style="margin-bottom:48px;">
+    <span class="divider-line"></span>
+    <span class="divider-icon">✦</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <h2 class="confirm-title">Confirma tu asistencia</h2>
+  <p class="confirm-sub">Te esperamos en esta noche mágica</p>
+
+  <div class="form-group">
+    <label class="form-label">Tu nombre completo</label>
+    <input class="form-input" type="text" id="inp-nombre" placeholder="Escribe tu nombre aquí">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">¿Asistirás?</label>
+    <div class="attend-toggle">
+      <button class="attend-btn" id="btn-si" onclick="selectAttend('si')">Sí asistiré ✦</button>
+      <button class="attend-btn" id="btn-no" onclick="selectAttend('no')">No podré ir</button>
+    </div>
+  </div>
+
+  <div class="form-group" id="group-personas" style="display:none;">
+    <label class="form-label">¿Cuántas personas incluyéndote a ti?</label>
+    <select class="form-select" id="inp-personas">
+      <option value="1">1 persona</option>
+      <option value="2">2 personas</option>
+      <option value="3">3 personas</option>
+      <option value="4">4 personas</option>
+      <option value="5">5 personas</option>
+    </select>
+  </div>
+
+  <button class="submit-btn" id="btn-submit" onclick="submitForm()">
+    ✦ &nbsp; Confirmar &nbsp; ✦
+  </button>
+
+  <p class="form-msg" id="form-msg"></p>
+</section>
+
+
+
+<!-- ══ ADMIN TRIGGER ══ -->
+<button class="admin-trigger" onclick="openLogin()" title="Panel de quinceañera">👁</button>
+
+<!-- ══ LOGIN OVERLAY ══ -->
+<div class="login-overlay" id="login-overlay">
+  <div class="login-box">
+    <span class="login-crown">👑</span>
+    <p class="login-title">Panel Exclusivo · Khrismel</p>
+    <input class="login-input" type="password" id="login-input"
+      placeholder="Contraseña"
+      onkeydown="if(event.key==='Enter') doLogin()">
+    <button class="login-btn" onclick="doLogin()">Ingresar</button>
+    <p class="login-err" id="login-err"></p>
+    <button class="login-cancel" onclick="closeLogin()">Cancelar</button>
+  </div>
+</div>
+
+<!-- ══ ADMIN PANEL ══ -->
+<div class="panel-overlay" id="panel-overlay">
+  <div class="panel-header">
+    <span class="panel-brand">Panel de Quinceañera · Khrismel XV</span>
+    <button class="panel-close" onclick="closePanel()">✕ Cerrar</button>
+  </div>
+  <div class="panel-body">
+    <h2 class="panel-title">Confirmaciones</h2>
+    <p class="panel-subtitle">Listado de invitados que respondieron</p>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num" id="stat-total">—</div>
+        <div class="stat-label">Total respuestas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="stat-si">—</div>
+        <div class="stat-label">Asistirán</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="stat-personas">—</div>
+        <div class="stat-label">Personas confirmadas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="stat-no">—</div>
+        <div class="stat-label">No asistirán</div>
+      </div>
+    </div>
+
+    <button class="panel-refresh" onclick="loadPanel()">↻ &nbsp; Actualizar lista</button>
+
+    <div id="panel-table-wrap"></div>
+  </div>
+</div>
+
+<script>
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz03qmlMtM1GgM6S5Mn_RqOHctm2p78GoqrUdYT63YpxuuAXYZ4PqTFFc1njZMaRTrKRg/exec';
+  const PANEL_PASS = 'khrismelxv2026';
+  let selectedAttend = null;
+
+  /* ── FORM LOGIC ── */
+  function selectAttend(val) {
+    selectedAttend = val;
+    document.getElementById('btn-si').className = 'attend-btn' + (val === 'si' ? ' active-yes' : '');
+    document.getElementById('btn-no').className = 'attend-btn' + (val === 'no' ? ' active-no' : '');
+    document.getElementById('group-personas').style.display = val === 'si' ? 'block' : 'none';
+  }
+
+  async function submitForm() {
+    const nombre = document.getElementById('inp-nombre').value.trim();
+    const msg = document.getElementById('form-msg');
+    const btn = document.getElementById('btn-submit');
+
+    if (!nombre) { showMsg('Por favor escribe tu nombre.', true); return; }
+    if (!selectedAttend) { showMsg('Por favor indica si asistirás.', true); return; }
+
+    const personas = selectedAttend === 'si'
+      ? parseInt(document.getElementById('inp-personas').value)
+      : 0;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre,
+          asistencia: selectedAttend === 'si' ? 'Sí' : 'No',
+          personas
+        })
+      });
+      showMsg(selectedAttend === 'si'
+        ? '✦ ¡Gracias! Te esperamos en la fiesta 🌹'
+        : '✦ Respuesta registrada. ¡Gracias por avisar!', false);
+      btn.textContent = '✓ Confirmado';
+      document.getElementById('inp-nombre').value = '';
+      selectedAttend = null;
+      document.getElementById('btn-si').className = 'attend-btn';
+      document.getElementById('btn-no').className = 'attend-btn';
+      document.getElementById('group-personas').style.display = 'none';
+    } catch(e) {
+      showMsg('Error al enviar. Intenta de nuevo.', true);
+      btn.disabled = false;
+      btn.textContent = '✦  Confirmar  ✦';
+    }
+  }
+
+  function showMsg(text, isError) {
+    const el = document.getElementById('form-msg');
+    el.textContent = text;
+    el.className = 'form-msg' + (isError ? ' error' : '');
+  }
+
+  /* ── LOGIN ── */
+  function openLogin() {
+    document.getElementById('login-overlay').classList.add('open');
+    setTimeout(() => document.getElementById('login-input').focus(), 100);
+  }
+  function closeLogin() {
+    document.getElementById('login-overlay').classList.remove('open');
+    document.getElementById('login-input').value = '';
+    document.getElementById('login-err').textContent = '';
+  }
+  function doLogin() {
+    const val = document.getElementById('login-input').value;
+    if (val === PANEL_PASS) {
+      closeLogin();
+      openPanel();
+    } else {
+      document.getElementById('login-err').textContent = 'Contraseña incorrecta 🌹';
+      document.getElementById('login-input').value = '';
+    }
+  }
+
+  /* ── PANEL ── */
+  function openPanel() {
+    document.getElementById('panel-overlay').classList.add('open');
+    loadPanel();
+  }
+  function closePanel() {
+    document.getElementById('panel-overlay').classList.remove('open');
+  }
+
+  async function loadPanel() {
+    const wrap = document.getElementById('panel-table-wrap');
+    wrap.innerHTML = '<p style="color:rgba(253,246,240,0.3);font-style:italic;padding:20px 0;">Cargando...</p>';
+
+    try {
+      const res = await fetch(SHEET_URL + '?t=' + Date.now());
+      const raw = await res.json();
+
+      // raw[0] = headers, raw[1..] = rows
+      const rows = raw.slice(1).filter(r => r[0]);
+
+      let totalSi = 0, totalNo = 0, totalPersonas = 0;
+      rows.forEach(r => {
+        if (r[1] === 'Sí') { totalSi++; totalPersonas += parseInt(r[2]) || 0; }
+        else totalNo++;
+      });
+
+      document.getElementById('stat-total').textContent    = rows.length;
+      document.getElementById('stat-si').textContent       = totalSi;
+      document.getElementById('stat-no').textContent       = totalNo;
+      document.getElementById('stat-personas').textContent = totalPersonas;
+
+      if (!rows.length) {
+        wrap.innerHTML = '<p class="panel-empty">Aún no hay respuestas registradas ✨</p>';
+        return;
+      }
+
+      let html = `<table class="panel-table">
+        <thead><tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Asistencia</th>
+          <th>Personas</th>
+          <th>Fecha</th>
+        </tr></thead><tbody>`;
+
+      rows.forEach((r, i) => {
+        const si = r[1] === 'Sí';
+        html += `<tr>
+          <td style="color:rgba(253,246,240,0.3);font-size:12px;">${i + 1}</td>
+          <td>${r[0] || '—'}</td>
+          <td><span class="badge ${si ? 'badge-yes' : 'badge-no'}">${r[1] || '—'}</span></td>
+          <td>${si ? (r[2] || '1') : '—'}</td>
+          <td style="font-size:12px;color:rgba(253,246,240,0.4);">${r[3] || '—'}</td>
+        </tr>`;
+      });
+
+      html += '</tbody></table>';
+      wrap.innerHTML = html;
+
+    } catch(e) {
+      wrap.innerHTML = '<p class="panel-empty" style="color:#e88a9a;">Error al cargar datos. Verifica la conexión.</p>';
+    }
+  }
+
+  /* ── PETALS ── */
+  const PETALS = ['🌸', '✦', '🌺', '✿', '❀'];
+  const container = document.getElementById('petals');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = PETALS[Math.floor(Math.random() * PETALS.length)];
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      font-size: ${8 + Math.random() * 10}px;
+      animation-duration: ${12 + Math.random() * 20}s;
+      animation-delay: ${Math.random() * 15}s;
+    `;
+    container.appendChild(p);
+  }
+</script>
+</body>
+</html>
