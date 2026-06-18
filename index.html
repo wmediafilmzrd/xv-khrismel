@@ -958,15 +958,22 @@
     document.getElementById('panel-overlay').classList.remove('open');
   }
 
-  async function loadPanel() {
+  function loadPanel() {
     const wrap = document.getElementById('panel-table-wrap');
     wrap.innerHTML = '<p style="color:rgba(253,246,240,0.3);font-style:italic;padding:20px 0;">Cargando...</p>';
 
-    try {
-      const res = await fetch(SHEET_URL + '?t=' + Date.now());
-      const raw = await res.json();
+    // Limpiar callback anterior si existe
+    if (window._jsonpCb) {
+      delete window._jsonpCb;
+      const old = document.getElementById('jsonp-script');
+      if (old) old.remove();
+    }
 
-      // raw[0] = headers, raw[1..] = rows
+    const cbName = '_jsonpCb';
+    window[cbName] = function(raw) {
+      delete window[cbName];
+      document.getElementById('jsonp-script').remove();
+
       const rows = raw.slice(1).filter(r => r[0]);
 
       let totalSi = 0, totalNo = 0, totalPersonas = 0;
@@ -1007,10 +1014,15 @@
 
       html += '</tbody></table>';
       wrap.innerHTML = html;
+    };
 
-    } catch(e) {
+    const script = document.createElement('script');
+    script.id = 'jsonp-script';
+    script.src = SHEET_URL + '?callback=' + cbName + '&t=' + Date.now();
+    script.onerror = () => {
       wrap.innerHTML = '<p class="panel-empty" style="color:#e88a9a;">Error al cargar datos. Verifica la conexión.</p>';
-    }
+    };
+    document.body.appendChild(script);
   }
 
   /* ── PETALS ── */
